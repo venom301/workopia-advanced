@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use illuminate\Http\Request;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -11,21 +13,19 @@ Route::get('/jobs', function () {
     return 'Available jobs will be listed here.';
 })->name('jobs');
 
-// for any making any kind of request
-Route::any('/submit', function () {
-    return 'Available jobs will be listed here.';
-});
-
-// another waay to genearte a redirect link to a route
-Route::get('/test', function () {
-    $url = route('jobs');
-    return '<a href="' . $url . '">click me</a>';
-});
-
-//returning json response
-Route::get('/data', function () {
+//getting what request method was used
+Route::get('/test', function (Request $request) {
     return [
-        'name' => 'John Doe',
-        'email' => 'ify@301.com'
+        'method' => $request->method(),
+        'url' => $request->url(),
+        'path' => $request->path(),
+        'ip' => $request->ip(),
+        'full' => $request->fullUrl(),
+        'headers' => $request->headers->all(),
     ];
+});
+
+//query parameters
+Route::get('/users', function (Request $request) {
+   return $request->has('name');
 });
