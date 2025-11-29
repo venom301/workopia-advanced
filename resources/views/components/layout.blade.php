@@ -10,9 +10,11 @@
     
 <x-header />
 
+<main>
+    <h1>Layout component</h1>
     <div class="content">
-        @yield('content')
+        {{ $slot }}
     </div>
-
+</main>
 </body>
 </html>

@@ -1,6 +1,4 @@
-@extends('layout')
-
-@section('content')
+<x-layout>
 <ul>
    @forelse ($jobs as $job)
        <li>{{ $job }}</li>
@@ -8,4 +6,4 @@
        <li>No jobs available.</li>
     @endforelse
 </ul>
-@endsection
+</x-layout>
