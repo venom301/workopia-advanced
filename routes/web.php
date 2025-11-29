@@ -6,7 +6,5 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index']);
 
-// calling on a class name and using the mthod index
-Route::get('/jobs', [JobController::class, 'index']);
-
-Route::get('/jobs/create', [JobController::class, 'create']);
+// using one line to define resourceful routes for JobController
+Route::resource('jobs', JobController::class);
