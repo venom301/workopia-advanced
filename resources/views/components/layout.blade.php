@@ -9,16 +9,19 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     @vite('resources/css/app.css')
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <title>Workopia | find and list jobs</title>
 </head>
 
-<body>
+<body class="bg-grey-200">
 
     <x-header />
-
+    @if(request()->is('/'))
+        <x-hero />
+    @endif
     <main>
         {{-- <h1 class="text-3xl font-bold underline">Layout component</h1> --}}
-        <div class="content">
+        <div class="container mx-auto mt-4 p-4">
             {{ $slot }}
         </div>
     </main>
