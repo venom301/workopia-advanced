@@ -18,6 +18,8 @@
     <x-header />
     @if(request()->is('/'))
         <x-hero />
+        <x-top-baner />
+
     @endif
     <main>
         {{-- <h1 class="text-3xl font-bold underline">Layout component</h1> --}}
