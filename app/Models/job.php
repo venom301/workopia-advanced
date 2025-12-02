@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class job extends Model
 {
@@ -11,5 +12,26 @@ class job extends Model
     protected $fillable = [
         'title',
         'description',
+        'salary',
+        'tags',
+        'job_type',
+        'remote',
+        'requirements',
+        'benefits',
+        'address',
+        'city',
+        'state',
+        'zipcode',
+        'contact_email',
+        'company_name',
+        'company_description',
+        'company_logo',
+        'company_website',
+        'user_id'
     ];
+
+    //relationship with User
+    public function user(): BelongsTo{
+        return $this->belongsTo(User::class);
+    }
 }
