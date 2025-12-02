@@ -18,7 +18,7 @@ return new class extends Migration {
             $table->unsignedBigInteger('user_id')->after('id');
             $table->integer('salary');
             $table->string('tags')->nullable();
-            $table->enum('job_type', ['full-time', 'part-time', 'contract', 'internship', 'Vunteer'])->default('full-time');
+            $table->enum('job_type', ['full-time', 'part-time', 'contract', 'internship', 'Volunteer'])->default('full-time');
             $table->boolean('remote')->default(false);
             $table->longText('requirements')->nullable();
             $table->longText('benefits')->nullable();
@@ -27,6 +27,7 @@ return new class extends Migration {
             $table->string('state');
             $table->string('zipcode')->nullable();
             $table->string('contact_email');
+            $table->string('contact_phone')->nullable();
             $table->string('company_name');
             $table->longText('company_description')->nullable();
             $table->text('company_logo')->nullable();
@@ -58,6 +59,7 @@ return new class extends Migration {
                 'state',
                 'zipcode',
                 'contact_email',
+                'contact_phone',
                 'company_name',
                 'company_description',
                 'company_logo',
