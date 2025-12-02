@@ -20,16 +20,16 @@ return new class extends Migration {
             $table->string('tags')->nullable();
             $table->enum('job_type', ['full-time', 'part-time', 'contract', 'internship', 'Vunteer'])->default('full-time');
             $table->boolean('remote')->default(false);
-            $table->string('requirements')->nullable();
-            $table->string('benefits')->nullable();
+            $table->longText('requirements')->nullable();
+            $table->longText('benefits')->nullable();
             $table->string('address')->nullable();
             $table->string('city');
             $table->string('state');
             $table->string('zipcode')->nullable();
             $table->string('contact_email');
             $table->string('company_name');
-            $table->text('company_description')->nullable();
-            $table->string('company_logo')->nullable();
+            $table->longText('company_description')->nullable();
+            $table->text('company_logo')->nullable();
             $table->string('company_website')->nullable();
 
             //foreign key constraint
