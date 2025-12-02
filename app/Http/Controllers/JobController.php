@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\job;
 
@@ -30,7 +29,18 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //getting data from request
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+        ]);
+
+        Job::create([
+            'title' => $validated['title'],
+            'description' => $validated['description'],
+        ]);
+
+        return redirect()->route('jobs.index');
     }
 
     /**
