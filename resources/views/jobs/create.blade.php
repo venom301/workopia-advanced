@@ -13,7 +13,7 @@
 
             <x-input.text id="title" name="title" label="Job Title" placeholder="Software Engineer" />
 
-            <x-input.text-area id="description" name="descriptiom" label="Job Description"
+            <x-input.text-area id="description" name="description" label="Job Description"
                 placeholder="We are seeking a skilled and motivated Software Developer to join our growing development team..." />
 
             <x-input.text id="salary" name="salary" label="Annaul Salary" placeholder="90000" />
@@ -40,13 +40,13 @@
                 Company Info
             </h2>
 
-            <x-input.text id="company_name" name="Company_name" label="Company Name" placeholder="Enter Company Name" />
+            <x-input.text id="company_name" name="company_name" label="Company Name" placeholder="Enter Company Name" />
 
-            <x-input.text-area id="company_descriptiom" rows="3" name="company_descriptiom" label="Company Description"
+            <x-input.text-area id="company_description" rows="3" name="company_description" label="Company Description"
                 placeholder="Company Description" />
 
             <x-input.text id="company_website" name="company_website" label="Company Website"
-                placeholder="Enter Website" />
+                placeholder="Enter Website" type="url" />
             <x-input.text id="contact_phone" name="contact_phone" label="Contact Phone" placeholder="Enter phone" />
 
             <x-input.text id="contact_email" name="contact_email" label="Contact Email"
