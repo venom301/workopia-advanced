@@ -33,6 +33,10 @@ class job extends Model
         'user_id'
     ];
 
+    protected $casts = [
+        'remote' => 'boolean',
+    ];
+
     //relationship with User
     public function user(): BelongsTo
     {
