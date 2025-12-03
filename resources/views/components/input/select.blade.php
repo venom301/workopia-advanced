@@ -9,7 +9,7 @@
         border-red-500
     @enderror">
     @foreach ( $options as $optionsValues => $optionLabel )
-    <option value="full-time {{ old($name, $value == $optionsValues ? 'selected' : '') }}">
+    <option value="full-time {{ old($name, $value) == $optionsValues ? 'selected' : '' }}">
            {{$optionLabel}}
         </option>
     @endforeach
