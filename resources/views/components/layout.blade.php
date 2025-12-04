@@ -11,7 +11,7 @@
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <script src="//unpkg.com/alpinejs" defer></script>
-    <title>Workopia | find and list jobs</title>
+    <title>{{ $title ?? 'Workopia | find and list jobs' }}</title>
 </head>
 
 <body class="bg-grey-200">
